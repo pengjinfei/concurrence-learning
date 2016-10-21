@@ -11,6 +11,7 @@
         <module>ch6</module>
         <module>ch7</module>
         <module>ch8</module>
+        <module>ch13</module>
     </modules>
 
     <parent>

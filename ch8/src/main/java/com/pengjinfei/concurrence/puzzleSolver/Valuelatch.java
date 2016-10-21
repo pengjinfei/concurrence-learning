@@ -23,6 +23,7 @@ public class Valuelatch<T> {
     }
 
     public T getValue() throws InterruptedException{
+        //可以使用限时的方法
         done.await();
         synchronized (this) {
             return value;

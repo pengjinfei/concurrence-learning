@@ -15,7 +15,12 @@ public class PuzzleSolver<P,M> extends ConcurrentPuzzleSolver<P,M> {
         super(puzzle, executor);
     }
 
-    class CountingSolverTask extends SolverTask{
+    @Override
+    protected Runnable newTask(P p, M m, Node<P, M> node) {
+        return new CountingSolverTask(p, m, node);
+    }
+
+    private class CountingSolverTask extends SolverTask{
 
         CountingSolverTask(P pos, M move, Node<P, M> prev) {
             super(pos, move, prev);

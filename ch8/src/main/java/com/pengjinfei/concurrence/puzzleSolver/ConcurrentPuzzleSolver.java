@@ -24,6 +24,7 @@ public class ConcurrentPuzzleSolver<P, M> {
         try {
             P p = puzzle.initialPosition();
             executor.execute(newTask(p, null, null));
+            //阻塞直到找到解答
             Node<P, M> solutionValue = solution.getValue();
             return (solutionValue == null) ? null : solutionValue.asMoveList();
         } finally {
